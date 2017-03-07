@@ -5,8 +5,7 @@ class Search extends Component {
   render() {
     return (
       <div>
-        Search: <input type='text' />
-        <button onClick={() => this.props.fetchPosts()}>Go</button>
+        Search music artist <input type='text' onChange={(e) => this.props.fetchPosts(e.target.value)}/>
       </div>
     );
   }

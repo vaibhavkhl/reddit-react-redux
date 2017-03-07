@@ -3,16 +3,10 @@ import { connect } from 'react-redux'
 import Search from './Search.js'
 import {fetchPosts, fetchPostsSuccess} from '../actions/index.js';
 
-const mapStateToProps = (state) => {
-  return {
-    query: ''
-  }
-}
-
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchPosts: () => {
-      dispatch(fetchPosts()).then((response) => {
+    fetchPosts: (query) => {
+      dispatch(fetchPosts(query)).then((response) => {
         dispatch(fetchPostsSuccess(response.payload.data))
       });
     }
@@ -20,7 +14,7 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 const SearchContainer = connect(
-  mapStateToProps,
+  null,
   mapDispatchToProps
 )(Search)
 
