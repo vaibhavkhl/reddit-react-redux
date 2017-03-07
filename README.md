@@ -1,3 +1,3 @@
-learning react redux.
+React Redux app.
 
-App consumes reddit api and render search results.
+App consumes lastfm api to search music artist.
