@@ -6,7 +6,7 @@ class ResultList extends Component {
     var list = []
     if (this.props.posts.postsList) {
       this.props.posts.postsList.posts.forEach(function(artist) {
-        list.push(<div key={artist.mbid}>{artist.name}</div>)
+        list.push(<div key={artist.name}><a href={artist.url}>{artist.name}</a></div>)
       })
     }
     return (
