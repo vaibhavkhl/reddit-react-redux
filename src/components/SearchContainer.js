@@ -1,23 +1,27 @@
+import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import Search from './Search.js'
-import fetchPosts from '../actions/index.js';
+import {fetchPosts, fetchPostsSuccess} from '../actions/index.js';
 
-// const mapStateToProps = (state) => {
-//   return {
-//     posts: state.posts
-//   }
-// }
+const mapStateToProps = (state) => {
+  return {
+    query: ''
+  }
+}
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchPosts: (text) => {
-      console.log('yes')
+    fetchPosts: () => {
       //dispatch(fetchPosts())
+      dispatch(fetchPosts()).then((response) => {
+        dispatch(fetchPostsSuccess(response.payload.data))
+      });
     }
   }
 }
 
 const SearchContainer = connect(
+  mapStateToProps,
   mapDispatchToProps
 )(Search)
 

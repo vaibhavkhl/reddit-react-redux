@@ -8,18 +8,8 @@ const mapStateToProps = (state) => {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    fetchPosts: (text) => {
-      console.log('yes')
-      dispatch(fetchPosts())
-    }
-  }
-}
-
 const ResultContainerList = connect(
-  mapStateToProps,
-  mapDispatchToProps
+  mapStateToProps
 )(ResultList)
 
 export default ResultContainerList;
