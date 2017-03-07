@@ -12,7 +12,6 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchPosts: () => {
-      //dispatch(fetchPosts())
       dispatch(fetchPosts()).then((response) => {
         dispatch(fetchPostsSuccess(response.payload.data))
       });
