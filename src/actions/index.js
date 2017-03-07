@@ -4,8 +4,9 @@ import axios from 'axios';
 
 var baseUrl = 'https://ws.audioscrobbler.com/2.0/';
 var apikey = '3c3a2bae12b83afb0b4af378d2783f08';
-var ROOT_URL = baseUrl + '?method=artist.search&artist=' + query + '&api_key=' + apikey + '&format=json';
 var query = 'tom'
+var ROOT_URL = baseUrl + '?method=artist.search&artist=' + query + '&api_key=' + apikey + '&format=json';
+
 
 
 export function fetchPosts() {
@@ -22,6 +23,7 @@ export function fetchPosts() {
 }
 
 export function fetchPostsSuccess(posts) {
+  console.log(posts)
   return {
     type: FETCH_POSTS_SUCCESS,
     payload: posts
